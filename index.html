@@ -3,133 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         *{
             margin: 0;
-            padding: 0;box-sizing: border-box;
+            padding: 0;
+            box-sizing: border-box;
+           
+            text-decoration: none;
+        }
+        body{
+            background: black;
+        }
+        span{
+            color: #0ef;
         }
         #header{
-            width: calc(100%-sidebar width);
-            padding: 20px 30px;
-            background: yellowgreen;
+            width: 100%;
+            padding: 10px 50px;
         }
         nav{
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        ul{
+            align-items: center;
 
         }
+        ul{}
         ul li {
             display: inline-block;
+            padding: 0px 10px;
+
         }
         ul li a{
-            color: black;
             font-size: 20px;
-            font-weight: 700;
+            color: #fff;
             text-decoration: none;
-            padding: 10px;
-            width: 25%;
+            font-weight: 700;
+        }
+        nav h1{
+            color: #fff;
+            font-size: 40px;
+            animation: kuldip .5s linear infinite;
+        }
+        @keyframes kuldip{
+            0%{
+                transform: scale(1.1);
+                text-shadow: 0px 0px 30px #0ef;
+            }
+            100%{
+                transform: scale();
+                text-shadow: 0px 0px 30px #0ef;
+            }
+        }
+        ul li a:hover{
+            color: #0ef;
+        }
+        .fa-solid{
+            display: none;
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            left: 350px;
         }
         .container{
+            padding: 10px 50px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            background-color: aqua;
-            padding: 20px 30px;
-            margin-top: 50px;
+            align-items: center;
             position: relative;
+            z-index: -1;
+           
+            
         }
-        .container p{
-            font-size: 17px;
+        .container .image img{
+            height: 490px;
+            clip-path: circle(40%);
+            border-radius: 50% 50%;
+            animation: kill .5s linear infinite;
+            filter: drop-shadow(0px 0px 30px #0ef);s
+           
+        }
+        @keyframes kill{
+            0%{
+                box-shadow: 0px 0px 30px rgb(0, 8, 8);
+            }
+        }
+        .letter{
+            color: #fff;
+        }
+        .letter h3{
+            font-size: 40px;
             font-weight: 700;
-            width: 500px;
         }
-        .about{
-            display: flex;
-            padding: 20px 30px;
-            gap: 20px;
+        .letter h1{
+            font-size: 50px;
+            font-weight: 700;
         }
-        .about-me{
-            background: yellow;
-            padding: ;
+        .letter p{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .image2{
+         width: 400px;
+            z-index: -1;
+            position: absolute;
+           top: 50px;
+             right: 20px;
+        }
+        .image2 img{
+            width: 400px;
+            animation: img 3s linear infinite;
+        }
+        @keyframes img{
+            0%{
+                transform: translateY(10px);
+                filter: drop-shadow(0px 0px 30px #0ef);
+
+            }
+            100%{
+                transform: translatex(10px);
+
+            }
+
+        }
 
 
-        }
 
         @media only screen and (max-width:600px){
+            .fa-solid{
+                display: block;
+            }
+            nav ul{
+                position: fixed;
+                top: 0;
+                left: -200;
+                width: 200px;
+                height: 100vh;
+                background-color: #0ef;
+                z-index: 2;
+                transition: .5s right;
+            }
+            ul li {
+                display: block;
+                text-align: center;
+                margin: 30px;
+            }
+            ul li a{
+                font-size: 16px;
+            }
+            nav ul .fa-solid{
+                position: absolute;
+                top: 0;
+                left:10px;
+                font-size: 30px;
+            }
             .container{
-                flex-direction: ;
+                padding: 0;
+            
                 flex-wrap: wrap-reverse;
+                
             }
-            .photo img{
-                width: 100%;
-                height: 400px;
+           .letter{
+                padding-left: 50px;
+                padding-right: 50px;
             }
-            .container p{
-                width: 400px;
+            .letter h3{
+                font-size: 20px;
             }
-            .about{
-                flex-wrap: wrap;
-                display: flex;
+            .letter h1{
+                font-size: 30px;
             }
-            .about-me{
-                flex-grow: 1;
-                flex-basis: 200;
+            .image{
+                padding-left: 10px;
+                padding-right: 10px;
             }
-            .about-me p{
-                padding: 30px;
+            .letter p{
+                font-size: 15px;
+                width: 300px;
             }
-            .about-me h2{
-                padding: 30px;
-            }
+            .image2{
+                position: absolute;
+                top: 10;
+                left: 5px;
+                padding: 0;
 
+            }
+            .image2 img{
+                width: 380px;
+            }
         }
-
     </style>
 </head>
 <body>
     <div id="header">
         <nav>
-            <h2>Web Designerr</h2>
-            <ul>
+            <h1>Mr.<span>Kuldip</span></h1>
+            <ul id="sidemenu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
     </div>
+
     <div class="container">
         <div class="letter">
-            <h2>Hello I AM' Web Developer</h2>
-            <h1>Sarvaiya kuldip</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus nulla optio eligendi quas vel, nisi fugiat sequi non amet autem itaque at soluta veniam velit eos, alias quod possimus minima.
+            <h3>Hello i'Am Web Designer</h3>
+            <h1>
+                Web Designer <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Sarvaiya.","Kuldip.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                  <span class="wrap"></span>
+                </a>
+              </h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, quaerat?</p>
+        </div>
+        <div class="image">
+            <img src="/image/IMG_20230927_151718.JPG" alt="">
 
-            </p>
         </div>
-        <div class="photo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXaOyMZ-oNf9c12sYaFQet2iqK6SgYFr_Cg&usqp=CAU" alt="">
+        <div class="image2">
+            <img src="/image/round-removebg-preview.png" alt="">
         </div>
+       
     </div>
-    <div class="about">
-        <div class="about-me">
-            <h2>Web developer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non vitae itaque nostrum placeat praesentium ratione expedita dicta illum natus!</p>
-        </div>
 
-        <div class="about-me">
-            <h2>Web developer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non vitae itaque nostrum placeat praesentium ratione expedita dicta illum natus!</p>
-        </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0"
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px"
+        }
+    </script>
 
-        <div class="about-me">
-            <h2>Web developer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non vitae itaque nostrum placeat praesentium ratione expedita dicta illum natus!</p>
-        </div>
-    </div>
+    <script>
+        var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+    </script>
 </body>
 </html>
